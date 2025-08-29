@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Jornada de Otho - Aventura de um Desenvolvedor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>A Jornada de Otho: A Aventura de um Desenvolvedor</h1>
+    </header>
+
+    <section>
+        <h2>Descrição</h2>
+        <p><strong>Otho</strong> é um programador solitário que vive em uma pequena cidade digital, onde bugs e problemas de código são monstros a serem derrotados. Sua missão? Conquistar o código perfeito e proteger sua cidade de falhas que podem destruí-la.</p>
+
+        <p>Esta história segue Otho enquanto ele encontra desafios inesperados em seu caminho, utilizando seu conhecimento em diversas linguagens de programação, como Python, JavaScript, HTML, e Git para gerenciar o caos.</p>
+
+        <h2>Como tudo começou</h2>
+        <p>Em um dia tranquilo, Otho estava revisando seu código quando, de repente, uma falha no sistema começou a se propagar rapidamente por todo o projeto. O erro? Um simples loop infinito que estava causando um <strong>stack overflow</strong>!</p>
+
+        <p>Ao investigar mais a fundo, ele descobriu que o bug estava sendo causado por uma série de pequenas alterações feitas por outros desenvolvedores. Otho, então, decidiu pegar o controle da situação, organizando o código e usando <strong>versionamento de código</strong> para garantir que nada se perdesse durante a resolução dos problemas.</p>
+
+        <h2>Missões</h2>
+        <div class="mission">
+            <h3>Missão 1: Salvar o Código</h3>
+            <p>Otho começou sua jornada para salvar a cidade digital. Com seu editor de código aberto, ele se deparou com a primeira missão: corrigir o loop infinito. Para isso, ele usou um comando <code>git bisect</code> para encontrar a origem do erro.</p>
+            <pre>
+                git bisect start
+                git bisect bad
+                git bisect good v1.0
+            </pre>
+            <p>Após encontrar a falha, Otho corrigiu o loop e se preparou para a próxima missão: refatorar o código para que ele fosse mais eficiente e legível.</p>
+        </div>
+
+        <div class="mission">
+            <h3>Missão 2: Refatorar e Documentar</h3>
+            <p>Otho sabia que, para evitar que outros desenvolvedores enfrentassem os mesmos problemas no futuro, era necessário documentar seu trabalho. Então ele começou a refatorar o código e a adicionar um README detalhado sobre o projeto.</p>
+
+            <h4>Exemplo de código refatorado:</h4>
+            <pre>
+# Função para calcular a soma dos números
+def soma_numeros(lista):
+    return sum(lista)
+
+# Exemplo de uso
+numeros = [1, 2, 3, 4, 5]
+print(soma_numeros(numeros))  # Saída: 15
+            </pre>
+
+            <p>Além disso, ele adicionou testes unitários para garantir que o código não quebrasse em futuras versões.</p>
+            <pre>
+                git commit -m "Refatoração do código e adição de testes"
+                git push origin main
+            </pre>
+        </div>
+
+        <div class="mission">
+            <h3>Missão 3: Criar um Pull Request</h3>
+            <p>Após semanas de trabalho, Otho estava pronto para colaborar com outros desenvolvedores. Ele criou um <strong>pull request</strong> no GitHub para compartilhar suas melhorias com a comunidade.</p>
+            <pre>
+                git checkout -b refatorar-codigo
+                git push origin refatorar-codigo
+            </pre>
+            <p>O pull request foi aprovado, e Otho finalmente conseguiu unir forças com outros desenvolvedores para proteger a cidade digital contra falhas de código.</p>
+        </div>
+
+        <h2>Tecnologias Utilizadas</h2>
+        <div class="technologies">
+            <ul>
+                <li><strong>Git/GitHub</strong>: Para controle de versão e colaboração.</li>
+                <li><strong>Python</strong>: Para manipulação de dados e automação.</li>
+                <li><strong>JavaScript</strong>: Para interatividade no frontend.</li>
+                <li><strong>HTML/CSS</strong>: Para criação de páginas estáticas.</li>
+            </ul>
+        </div>
+
+        <h2>Contribuições</h2>
+        <p>Sinta-se à vontade para contribuir! Basta fazer um <strong>fork</strong> deste repositório, criar uma branch e abrir um pull request com suas melhorias.</p>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Otho - 2025</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Conectando o script JS -->
+</body>
+</html>
