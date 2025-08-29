@@ -7,36 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>A Jornada de Otho: A Aventura de um Desenvolvedor</h1>
-        <button id="start-btn" class="btn">Iniciar Jogo</button>
-    </header>
+    <div class="game-container">
+        <header>
+            <h1>A Jornada de Otho</h1>
+            <p class="subtitle">A Aventura de um Desenvolvedor</p>
+        </header>
 
-    <section id="game-content" class="hidden">
-        <h2>Descrição</h2>
-        <p><strong>Otho</strong> é um programador solitário que vive em uma pequena cidade digital, onde bugs e problemas de código são monstros a serem derrotados. Sua missão? Conquistar o código perfeito e proteger sua cidade de falhas que podem destruí-la.</p>
+        <section id="game-content" class="hidden">
+            <p><strong>Otho</strong> é um programador solitário em uma cidade digital. Sua missão é salvar sua cidade e derrotar os bugs que ameaçam sua existência.</p>
+            
+            <div class="mission" id="mission-1">
+                <h3>Missão 1: Salvar o Código</h3>
+                <p>Otho precisa corrigir o erro que bloqueou seu sistema. Ele usa o <code>git bisect</code> para rastrear o bug.</p>
+                <pre>
+git bisect start
+git bisect bad
+git bisect good v1.0
+                </pre>
+                <button class="next-btn btn">Avançar</button>
+            </div>
 
-        <p>Esta história segue Otho enquanto ele encontra desafios inesperados em seu caminho, utilizando seu conhecimento em diversas linguagens de programação, como Python, JavaScript, HTML, e Git para gerenciar o caos.</p>
-
-        <h2>Missões</h2>
-        
-        <!-- Missão 1 -->
-        <div class="mission" id="mission-1">
-            <h3>Missão 1: Salvar o Código</h3>
-            <p>Otho começou sua jornada para salvar a cidade digital. Com seu editor de código aberto, ele se deparou com a primeira missão: corrigir o loop infinito. Para isso, ele usou um comando <code>git bisect</code> para encontrar a origem do erro.</p>
-            <pre>
-                git bisect start
-                git bisect bad
-                git bisect good v1.0
-            </pre>
-            <button class="next-btn btn">Avançar</button>
-        </div>
-
-        <!-- Missão 2 -->
-        <div class="mission" id="mission-2" style="display: none;">
-            <h3>Missão 2: Refatorar e Documentar</h3>
-            <p>Otho sabia que, para evitar que outros desenvolvedores enfrentassem os mesmos problemas no futuro, era necessário documentar seu trabalho. Então ele começou a refatorar o código e a adicionar um README detalhado sobre o projeto.</p>
-            <pre>
+            <div class="mission" id="mission-2">
+                <h3>Missão 2: Refatorar e Documentar</h3>
+                <p>Agora, Otho deve refatorar seu código e adicionar comentários para facilitar a leitura.</p>
+                <pre>
 # Função para calcular a soma dos números
 def soma_numeros(lista):
     return sum(lista)
@@ -44,36 +38,28 @@ def soma_numeros(lista):
 # Exemplo de uso
 numeros = [1, 2, 3, 4, 5]
 print(soma_numeros(numeros))  # Saída: 15
-            </pre>
-            <button class="next-btn btn">Avançar</button>
-        </div>
+                </pre>
+                <button class="next-btn btn">Avançar</button>
+            </div>
 
-        <!-- Missão 3 -->
-        <div class="mission" id="mission-3" style="display: none;">
-            <h3>Missão 3: Criar um Pull Request</h3>
-            <p>Após semanas de trabalho, Otho estava pronto para colaborar com outros desenvolvedores. Ele criou um <strong>pull request</strong> no GitHub para compartilhar suas melhorias com a comunidade.</p>
-            <pre>
-                git checkout -b refatorar-codigo
-                git push origin refatorar-codigo
-            </pre>
-            <button class="next-btn btn">Avançar</button>
-        </div>
+            <div class="mission" id="mission-3">
+                <h3>Missão 3: Criar um Pull Request</h3>
+                <p>Otho envia suas alterações para o repositório GitHub com um pull request.</p>
+                <pre>
+git checkout -b refatorar-codigo
+git push origin refatorar-codigo
+                </pre>
+                <button class="next-btn btn">Avançar</button>
+            </div>
 
-        <h2>Tecnologias Utilizadas</h2>
-        <ul class="technologies">
-            <li><strong>Git/GitHub</strong>: Para controle de versão e colaboração.</li>
-            <li><strong>Python</strong>: Para manipulação de dados e automação.</li>
-            <li><strong>JavaScript</strong>: Para interatividade no frontend.</li>
-            <li><strong>HTML/CSS</strong>: Para criação de páginas estáticas.</li>
-        </ul>
+            <h2>Contribua</h2>
+            <p>Você pode contribuir para esta jornada criando seu próprio pull request!</p>
+        </section>
 
-        <h2>Contribuições</h2>
-        <p>Sinta-se à vontade para contribuir! Basta fazer um <strong>fork</strong> deste repositório, criar uma branch e abrir um pull request com suas melhorias.</p>
-    </section>
-
-    <footer>
-        <p>Desenvolvido por Otho - 2025</p>
-    </footer>
+        <footer>
+            <button id="start-btn" class="btn">Iniciar Jogo</button>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
