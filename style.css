@@ -60,12 +60,6 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
-
-.mission.visible {
-    opacity: 1;
 }
 
 /* Lista de tecnologias */
