@@ -1,64 +1,94 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
+    box-sizing: border-box;
 }
 
+/* Corpo e layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Header */
 header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1.5rem;
-}
-
-section {
     padding: 2rem;
+    position: relative;
 }
 
-h1, h2 {
-    color: #444;
+h1 {
+    font-size: 2rem;
+    animation: fadeIn 2s ease-out;
 }
 
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#game-content {
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#game-content.hidden {
+    opacity: 0;
+}
+
+/* Missões */
 .mission {
     background-color: #fff;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
-.technologies ul {
-    list-style-type: none;
+.mission.visible {
+    opacity: 1;
+}
+
+/* Lista de tecnologias */
+.technologies {
+    list-style: none;
     padding: 0;
+    margin-top: 1.5rem;
 }
 
 .technologies li {
     background-color: #e4e4e4;
     margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Animação para o título */
+/* Animações */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-h1 {
-    animation: fadeIn 2s ease-out;
+/* Transições */
+.next-btn {
+    margin-top: 1rem;
 }
