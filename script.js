@@ -5,7 +5,7 @@ const audio = document.getElementById('bg-music');
 const playPauseBtn = document.getElementById('playPauseBtn');
 const volumeControl = document.getElementById('volumeControl');
 
-// Função que alterna entre reproduzir e pausar a música
+// Função para alternar a música
 function toggleMusic() {
   if (audio.paused) {
     audio.play();
@@ -21,15 +21,13 @@ volumeControl.addEventListener('input', () => {
   audio.volume = volumeControl.value;
 });
 
-// Função que altera a história conforme o progresso
+// Função para atualizar a história e imagem de fundo
 function updateStory() {
   const description = document.getElementById('description');
   const option1 = document.getElementById('btnOption1');
   const option2 = document.getElementById('btnOption2');
-
   const planetImage = document.getElementById('planet-image');
 
-  // Lógica da história com base no estado
   if (storyStage === 'start') {
     description.innerText = "Otho, o astronauta, acaba de chegar a um planeta desconhecido. Sua missão é explorar e descobrir os segredos que ele esconde. O que Otho vai fazer?";
     option1.innerText = "Explorar a superfície";
@@ -47,9 +45,19 @@ function updateStory() {
     option1.innerText = "Fazer um acordo com os alienígenas";
     option2.innerText = "Destruir o artefato para evitar riscos";
     planetImage.style.backgroundImage = "url('https://raw.githubusercontent.com/seu-usuario/repositorio/master/images/artifact.jpg')";
+  } 
+  else if (storyStage === 'alienAlliance') {
+    description.innerText = "Otho consegue estabelecer um acordo com os alienígenas, criando uma aliança poderosa que promete trazer paz ao universo. Otho se torna uma lenda entre as civilizações.";
+    option1.innerText = "Jogar novamente";
+    option2.innerText = "Fim da jornada";
+    planetImage.style.backgroundImage = "url('https://raw.githubusercontent.com/seu-usuario/repositorio/master/images/peace.jpg')";
   }
-  // Mais ramificações e finais podem ser adicionados conforme o enredo
-
+  else if (storyStage === 'destroyArtifact') {
+    description.innerText = "Otho destrói o artefato e causa uma reação inesperada, levando a uma catástrofe no planeta. Ele consegue escapar por pouco, mas está sozinho no espaço, sem rumo.";
+    option1.innerText = "Jogar novamente";
+    option2.innerText = "Fim da jornada";
+    planetImage.style.backgroundImage = "url('https://raw.githubusercontent.com/seu-usuario/repositorio/master/images/destruction.jpg')";
+  }
 }
 
 // Função que lida com as escolhas do jogador
@@ -57,26 +65,29 @@ function handleChoice(choice) {
   if (choice === 'option1') {
     if (storyStage === 'start') {
       storyStage = 'exploreSurface'; // Explorar a superfície
-    } else if (storyStage === 'exploreSurface') {
-      storyStage = 'cityDiscovery'; // Descobrir cidade alienígena
     } 
-  } else if (choice === 'option2') {
+    else if (storyStage === 'exploreSurface') {
+      storyStage = 'cityDiscovery'; // Entrar na cidade alienígena
+    } 
+    else if (storyStage === 'cityDiscovery') {
+      storyStage = 'alienAlliance'; // Fazer um acordo com os alienígenas
+    }
+  } 
+  else if (choice === 'option2') {
     if (storyStage === 'start') {
-      storyStage = 'exploreSurface'; // Investigar atmosfera
-    } else if (storyStage === 'exploreSurface') {
-      storyStage = 'destroyArtifact'; // Destruir artefato
+      storyStage = 'exploreSurface'; // Investigar a atmosfera
+    }
+    else if (storyStage === 'exploreSurface') {
+      storyStage = 'destroyArtifact'; // Destruir o artefato
     }
   }
 
-  updateStory(); // Atualizar a história com base na escolha
+  updateStory(); // Atualiza a história e imagem
 }
 
-// Event listeners para os botões
+// Lidar com os cliques dos botões
 document.getElementById('btnOption1').addEventListener('click', () => handleChoice('option1'));
 document.getElementById('btnOption2').addEventListener('click', () => handleChoice('option2'));
 
-// Event listener para controlar a música
-playPauseBtn.addEventListener('click', toggleMusic);
-
-// Atualizar a história ao iniciar o jogo
+// Iniciar o jogo
 updateStory();
