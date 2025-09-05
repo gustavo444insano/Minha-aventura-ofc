@@ -91,3 +91,6 @@ document.getElementById('btnOption2').addEventListener('click', () => handleChoi
 
 // Iniciar o jogo
 updateStory();
+
+// Pausar/Alternar música
+playPauseBtn.addEventListener('click', toggleMusic);
