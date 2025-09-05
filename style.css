@@ -40,12 +40,11 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://raw.githubusercontent.com/seu-usuario/repositorio/master/planet.jpg');
   background-size: cover;
   background-position: center;
   filter: blur(5px);
   z-index: -1;
-  animation: background-fade 15s ease-in-out infinite;
+  transition: all 1s ease-in-out;
 }
 
 /* Animação de fundo */
@@ -98,11 +97,6 @@ button:active {
   transform: scale(0.95);
 }
 
-/* Efeitos para os botões */
-button:focus {
-  outline: none;
-}
-
 /* Ajustes de layout */
 @media (max-width: 600px) {
   .game-container {
@@ -121,4 +115,32 @@ button:focus {
     font-size: 1em;
     padding: 12px;
   }
+}
+
+/* Estilos dos controles de música */
+.music-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#playPauseBtn {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#playPauseBtn:hover {
+  background-color: #005f99;
+}
+
+#volumeControl {
+  width: 150px;
 }
