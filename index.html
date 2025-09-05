@@ -1,66 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Jornada de Otho - Aventura de um Desenvolvedor</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura Interativa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
-    <div class="game-container">
-        <header>
-            <h1>A Jornada de Otho</h1>
-            <p class="subtitle">A Aventura de um Desenvolvedor</p>
-        </header>
+  <h1>Aventura Interativa</h1>
+  <div id="game-container">
+    <p id="description">Você está em uma floresta sombria. O que deseja fazer?</p>
+    <button onclick="choosePath('left')">Ir para a esquerda</button>
+    <button onclick="choosePath('right')">Ir para a direita</button>
+  </div>
 
-        <section id="game-content" class="hidden">
-            <p><strong>Otho</strong> é um programador solitário em uma cidade digital. Sua missão é salvar sua cidade e derrotar os bugs que ameaçam sua existência.</p>
-            
-            <div class="mission" id="mission-1">
-                <h3>Missão 1: Salvar o Código</h3>
-                <p>Otho precisa corrigir o erro que bloqueou seu sistema. Ele usa o <code>git bisect</code> para rastrear o bug.</p>
-                <pre>
-git bisect start
-git bisect bad
-git bisect good v1.0
-                </pre>
-                <button class="next-btn btn">Avançar</button>
-            </div>
-
-            <div class="mission" id="mission-2">
-                <h3>Missão 2: Refatorar e Documentar</h3>
-                <p>Agora, Otho deve refatorar seu código e adicionar comentários para facilitar a leitura.</p>
-                <pre>
-# Função para calcular a soma dos números
-def soma_numeros(lista):
-    return sum(lista)
-
-# Exemplo de uso
-numeros = [1, 2, 3, 4, 5]
-print(soma_numeros(numeros))  # Saída: 15
-                </pre>
-                <button class="next-btn btn">Avançar</button>
-            </div>
-
-            <div class="mission" id="mission-3">
-                <h3>Missão 3: Criar um Pull Request</h3>
-                <p>Otho envia suas alterações para o repositório GitHub com um pull request.</p>
-                <pre>
-git checkout -b refatorar-codigo
-git push origin refatorar-codigo
-                </pre>
-                <button class="next-btn btn">Avançar</button>
-            </div>
-
-            <h2>Contribua</h2>
-            <p>Você pode contribuir para esta jornada criando seu próprio pull request!</p>
-        </section>
-
-        <footer>
-            <button id="start-btn" class="btn">Iniciar Jogo</button>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="sketch.js"></script>
 </body>
 </html>

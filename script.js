@@ -1,39 +1,46 @@
-document.getElementById('start-btn').addEventListener('click', startGame);
+let state = 'start'; // Define o estado inicial da aventura
 
-let currentMission = 1;
-
-// Função para iniciar o jogo
-function startGame() {
-    // Ocultar o botão de iniciar
-    document.getElementById('start-btn').style.display = 'none';
-    // Mostrar o conteúdo do jogo
-    document.getElementById('game-content').classList.remove('hidden');
-    
-    // Exibir a primeira missão
-    showMission(currentMission);
+function setup() {
+  createCanvas(400, 400); // Cria uma tela de 400x400
+  background(220);
+  drawScene();
 }
 
-// Função para mostrar a missão
-function showMission(missionNumber) {
-    const missions = document.querySelectorAll('.mission');
-    
-    // Ocultar todas as missões
-    missions.forEach(mission => {
-        mission.classList.remove('mission-visible');
-    });
+function drawScene() {
+  if (state === 'start') {
+    background(220);
+    fill(0);
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    text("Você está em uma floresta sombria.", width / 2, height / 3);
+    textSize(18);
+    text("Escolha o caminho:", width / 2, height / 2);
+  } else if (state === 'left') {
+    background(100, 100, 255); // Azul para o caminho da esquerda
+    fill(0);
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    text("Você encontrou um rio!", width / 2, height / 3);
+    textSize(18);
+    text("O que deseja fazer?", width / 2, height / 2);
+  } else if (state === 'right') {
+    background(100, 255, 100); // Verde para o caminho da direita
+    fill(0);
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    text("Você encontrou uma cabana.", width / 2, height / 3);
+    textSize(18);
+    text("O que deseja fazer?", width / 2, height / 2);
+  }
+}
 
-    // Exibir a missão atual
-    const currentMissionElement = document.getElementById(`mission-${missionNumber}`);
-    currentMissionElement.classList.add('mission-visible');
-
-    // Aguardar clique no botão "Avançar"
-    const nextButton = currentMissionElement.querySelector('.next-btn');
-    nextButton.addEventListener('click', () => {
-        if (currentMission < 3) {
-            currentMission++;
-            showMission(currentMission);
-        } else {
-            alert('Você completou todas as missões! Parabéns!');
-        }
-    });
+function choosePath(direction) {
+  if (direction === 'left') {
+    state = 'left';
+    document.getElementById('description').innerText = "Você encontrou um rio! O que deseja fazer?";
+  } else if (direction === 'right') {
+    state = 'right';
+    document.getElementById('description').innerText = "Você encontrou uma cabana! O que deseja fazer?";
+  }
+  drawScene();
 }
