@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aventura Interativa</title>
+  <title>Aventura Espacial</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
-  <h1>Aventura Interativa</h1>
-  <div id="game-container">
-    <p id="description">Você está em uma floresta sombria. O que deseja fazer?</p>
-    <button onclick="choosePath('left')">Ir para a esquerda</button>
-    <button onclick="choosePath('right')">Ir para a direita</button>
+  <div class="game-container">
+    <h1>Exploração Espacial: O Planeta Desconhecido</h1>
+    <div id="story">
+      <p id="description">Você é um astronauta a bordo da nave espacial *Orion*. Após meses de viagem, você finalmente chega a um planeta desconhecido. O que deseja fazer?</p>
+    </div>
+    <div class="buttons">
+      <button id="btnOption1">Explorar a superfície</button>
+      <button id="btnOption2">Ficar na nave e monitorar o planeta</button>
+    </div>
   </div>
 
-  <script src="sketch.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
