@@ -71,6 +71,9 @@ function handleChoice(choice) {
     } 
     else if (storyStage === 'cityDiscovery') {
       storyStage = 'alienAlliance'; // Fazer um acordo com os alienígenas
+    } 
+    else if (storyStage === 'alienAlliance' || storyStage === 'destroyArtifact') {
+      storyStage = 'start'; // Reiniciar o jogo
     }
   } 
   else if (choice === 'option2') {
@@ -78,6 +81,9 @@ function handleChoice(choice) {
       storyStage = 'exploreSurface'; // Investigar a atmosfera
     }
     else if (storyStage === 'exploreSurface') {
+      storyStage = 'destroyArtifact'; // Destruir o artefato
+    }
+    else if (storyStage === 'cityDiscovery') {
       storyStage = 'destroyArtifact'; // Destruir o artefato
     }
   }
