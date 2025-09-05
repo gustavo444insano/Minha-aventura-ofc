@@ -15,6 +15,7 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
+  overflow: hidden;
 }
 
 .game-container {
@@ -22,19 +23,55 @@ body {
   padding: 30px;
   border-radius: 8px;
   width: 400px;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   color: #ffcc00;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+#planet-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://raw.githubusercontent.com/seu-usuario/repositorio/master/planet.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+  animation: background-fade 15s ease-in-out infinite;
+}
+
+/* Animação de fundo */
+@keyframes background-fade {
+  0% {
+    filter: blur(5px);
+  }
+  50% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(5px);
+  }
+}
+
+/* Texto do jogo */
 #description {
   font-size: 1.2em;
   margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
 }
 
+/* Estilo dos botões */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -49,8 +86,39 @@ button {
   font-size: 1.1em;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 button:hover {
   background-color: #005f99;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Efeitos para os botões */
+button:focus {
+  outline: none;
+}
+
+/* Ajustes de layout */
+@media (max-width: 600px) {
+  .game-container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  #description {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 12px;
+  }
 }
